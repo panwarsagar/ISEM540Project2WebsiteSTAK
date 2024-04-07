@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare Services</title>
+<style>
+/* Your CSS styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.service {
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.service-img {
+  width: 100%;
+  height: 300px;
+  object-fit: fill;
+}
+
+.service-content {
+  padding: 20px;
+}
+
+.service h2 {
+  color: #ad0000;
+}
+
+.service p {
+  color: #333;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #ad0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #890000;
+}
+
+.dropdown {
+  margin-bottom: 10px;
+}
+
+.dropdown-select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* Medicine Service Specific Styles */
+.service-content select {
+    margin-top: 10px;
+  }
+  
+  .service-content label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .service-content .medicine-options {
+    display: none;
+  }
+  
+  .service-content .user-info {
+    display: none;
+  }
+  
+  .user-info input[type="text"],
+  .user-info input[type="tel"],
+  .user-info input[type="number"],
+  .user-info input[type="email"],
+  .user-info select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  /* health record Service Specific Styles */
+.service-content input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  .service-content .health-record,
+  .service-content .price {
+    display: none;
+  }
+
+  /* health education Service Specific Styles */
+  .curriculum-options {
+    display: none;
+  }
+  
+  .curriculum-options ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .curriculum-options ul li {
+    margin-bottom: 10px;
+  }
+  
+  .curriculum-options input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  /* Header Styles */
+header {
+    background-color: #fb0404;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 60px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>KPSA</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Services</a>
+    <a href="#">Projects</a>
+    <a href="#">Contacts</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="service">
+    <img class="service-img" src="virtual_healthcare.jpg" alt="Virtual Healthcare Solutions">
+    <div class="service-content">
+      <h2>Virtual Healthcare Solutions</h2>
+      <p>"Your Health, Your Way"<br>
+      Revolutionize healthcare with our mobile app offering Virtual Doctor Visits over Telephone. Access expert medical advice for non-serious health issues from the comfort of your home.</p>
+      <div class="dropdown">
+        <label for="doctor-select">Select a doctor:</label>
+        <select class="dropdown-select" id="doctor-select">
+          <option value="General Physician">General Physician</option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="Pediatrician">Pediatrician</option>
+          <option value="Cardiologist">Cardiologist</option>
+          <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
+          <option value="Neurologist">Neurologist</option>
+          <option value="Psychiatrist">Psychiatrist</option>
+          <option value="Gynecologist">Gynecologist</option>
+          <option value="Ophthalmologist">Ophthalmologist</option>
+          <option value="ENT Specialist">ENT Specialist</option>
+        </select>
+      </div>
+      <div id="doctor-options" style="display:none;">
+        <label for="doctor-options-select">Select a doctor:</label>
+        <select class="dropdown-select" id="doctor-options-select">
+          <!-- Options will be added dynamically using JavaScript -->
+        </select>
+      </div>
+      <button class="button" onclick="showDoctors()">Select Doctor</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+    <div class="service">
+      <img class="service-img" src="remote_medicine_delivery.jpg" alt="Remote Medicine Delivery">
+      <div class="service-content">
+        <h2>Remote Medicine Delivery</h2>
+        <p>"MedConnect"<br>
+        Our AI/ML-powered chatbot-linked call center facilitates Remote Pharmacy services, delivering essential items and medicines using cutting-edge drone technology.</p>
+        <div class="dropdown">
+          <label for="medicine-select">Select a medicine:</label>
+          <select class="dropdown-select" id="medicine-select">
+            <option value="Medicine 1">Medicine 1</option>
+            <option value="Medicine 2">Medicine 2</option>
+            <option value="Medicine 3">Medicine 3</option>
+            <option value="Medicine 4">Medicine 4</option>
+            <option value="Medicine 5">Medicine 5</option>
+            <option value="Medicine 6">Medicine 6</option>
+            <option value="Medicine 7">Medicine 7</option>
+            <option value="Medicine 8">Medicine 8</option>
+            <option value="Medicine 9">Medicine 9</option>
+            <option value="Medicine 10">Medicine 10</option>
+          </select>
+        </div>
+        <button class="button" onclick="showUserInfo()">Select Medicine</button>
+        <div class="medicine-options">
+          <div class="user-info">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="Enter your address">
+            <label for="phonenumber">Phone Number:</label>
+            <input type="tel" id="phonenumber" placeholder="Enter your phone number">
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" placeholder="Enter your emergency contact">
+            <label for="creditcard">Credit Card Details:</label>
+            <input type="text" id="creditcard" placeholder="Enter your credit card details">
+            <button class="button" onclick="placeOrder()">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="service">
+          <img class="service-img" src="universal_health_record.jpg" alt="Universal Health Record for Emergency">
+          <div class="service-content">
+            <h2>Universal Health Record for Emergency</h2>
+            <p>"HealthGuard"<br>
+            Secure your health with our Universal Health Record system, a digital repository with the government, ensuring quick identification of existing health conditions for better healthcare planning.</p>
+            <button class="button" onclick="uploadRecord()">Upload Health Record</button>
+            <div class="health-record">
+              <label for="file-upload">Upload your health record:</label>
+              <input type="file" id="file-upload">
+            </div>
+            <div class="price">
+              <p>Price for saving your health record for a year: $50</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+            <div class="service">
+              <img class="service-img" src="health_education_in_schools.jpg" alt="Health Education in Schools">
+              <div class="service-content">
+                <h2>Health Education in Schools</h2>
+                <p>"HealthSmart Kids"<br>
+                Empower the future with inculcation of healthcare in school curriculums. We teach simple first aid techniques and provide knowledge on medicines, fostering a healthy and aware population.</p>
+                <button class="button" onclick="viewCurriculum()">View Curriculum</button>
+                <div class="curriculum-options">
+                  <ul>
+                    <li>
+                      <input type="radio" name="curriculum" id="basic-curriculum" value="Basic Health Curriculum">
+                      <label for="basic-curriculum">Basic Health Curriculum - $20</label>
+                    </li>
+                    <li>
+                      <input type="radio" name="curriculum" id="advanced-curriculum" value="Advanced Health Curriculum">
+                      <label for="advanced-curriculum">Advanced Health Curriculum - $30</label>
+                    </li>
+                    <li>
+                      <input type="radio" name="curriculum" id="comprehensive-curriculum" value="Comprehensive Health Curriculum">
+                      <label for="comprehensive-curriculum">Comprehensive Health Curriculum - $40</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+<script>
+function showDoctors() {
+  var selectedType = document.getElementById('doctor-select').value;
+  var doctorOptions = document.getElementById('doctor-options');
+  var selectDoctorOptions = document.getElementById('doctor-options-select');
+  var doctors = getDoctorsForType(selectedType);
+
+  // Clear previous options
+  selectDoctorOptions.innerHTML = '';
+
+  // Populate options
+  doctors.forEach(function(doctor) {
+    var option = document.createElement('option');
+    option.value = doctor.name;
+    option.text = doctor.name + ' - ' + doctor.specialty + ' - Consultation: ' + doctor.consultationNumber + ' - Fee: ' + doctor.fee;
+    selectDoctorOptions.appendChild(option);
+  });
+
+  // Show the doctor options
+  doctorOptions.style.display = 'block';
+}
+
+function getDoctorsForType(type) {
+  // Dummy data, replace with actual data
+  var doctors = [];
+  if (type === "General Physician") {
+    doctors.push({ name: "Dr. John Smith", specialty: "General Physician", consultationNumber: "+1234567890", fee: "$50" });
+    doctors.push({ name: "Dr. Emily Johnson", specialty: "General Physician", consultationNumber: "+1987654321", fee: "$60" });
+  } else if (type === "Dermatologist") {
+    doctors.push({ name: "Dr. Laura Davis", specialty: "Dermatologist", consultationNumber: "+1122334455", fee: "$70" });
+    doctors.push({ name: "Dr. Michael Brown", specialty: "Dermatologist", consultationNumber: "+9988776655", fee: "$80" });
+  }
+  // Add more types and doctors here
+  return doctors;
+}
+
+function showUserInfo() {
+    var medicineOptions = document.querySelector('.medicine-options');
+    var userInfo = document.querySelector('.user-info');
+    
+    // Show user info section
+    medicineOptions.style.display = 'block';
+    userInfo.style.display = 'block';
+  }
+  
+  function placeOrder() {
+    // Retrieve user information
+    var name = document.getElementById('name').value;
+    var address = document.getElementById('address').value;
+    var phoneNumber = document.getElementById('phonenumber').value;
+    var contact = document.getElementById('contact').value;
+    var creditCard = document.getElementById('creditcard').value;
+    
+    // Process order (dummy example)
+    alert("Order placed successfully!\nName: " + name + "\nAddress: " + address + "\nPhone Number: " + phoneNumber + "\nContact: " + contact + "\nCredit Card: " + creditCard);
+  }
+
+  function uploadRecord() {
+    var healthRecord = document.querySelector('.health-record');
+    var price = document.querySelector('.price');
+    
+    // Show health record upload option and price
+    healthRecord.style.display = 'block';
+    price.style.display = 'block';
+  }
+
+  function viewCurriculum() {
+    var curriculumOptions = document.querySelector('.curriculum-options');
+    
+    // Show curriculum options
+    curriculumOptions.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

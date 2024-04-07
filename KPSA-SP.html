@@ -1,0 +1,551 @@
+<html>
+<style>
+/*Typography*/
+html {
+    font: 16px "Open Sans Condensed", "Roboto Condensed", Verdana, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2.25em;
+  }
+  
+  h2 {
+    font-size: 1.75em;
+  }
+  
+  h3 {
+    font-size: 1.75em;
+  }
+  
+  h4 {
+    font-size: 1.5em;
+  }
+  
+  p {
+    font-size: 1.10em;
+  }
+  
+  /*Layout*/
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    color: #333;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+  
+  .line {
+    float: left;
+    width: 100%;
+    border-top: 0.25em solid #333;
+  }
+  
+  .wrapper {
+    margin: auto;
+    width: 60em;
+    /*960px*/
+  }
+  
+  header,
+  nav,
+  section,
+  footer {
+    float: left;
+    width: 100%;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  
+  .button {
+    display: block;
+    padding: 0.75em 1.25em;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #ad0000;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+  }
+  .button:focus, .button:hover {
+    background: #890000;
+  }
+  .button:active {
+    background: #c10000;
+  }
+  
+  .link {
+    font-weight: bold;
+    color: #ad0000;
+  }
+  .link:focus, .link:hover {
+    color: #7a0000;
+  }
+  .link:active {
+    color: #c70000;
+  }
+  
+  /*Navigation*/
+  nav h1 {
+    float: left;
+    padding: 0.25em 0.25em 0 0;
+    font-size: 4.5em;
+    text-transform: uppercase;
+  }
+  
+  nav h1 a {
+    color: #ad0000;
+  }
+  
+  .nav-ul {
+    display: flex;
+  }
+  
+  header li {
+    width: 20%;
+  }
+  
+  header li:not(:first-child) {
+    margin-left: 4%;
+  }
+  
+  header .nav-ul a {
+    display: block;
+    padding: 1.75em 0.5em;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+  }
+  header .nav-ul a:focus, header .nav-ul a:hover {
+    color: #ad0000;
+  }
+  header .nav-ul a:active {
+    color: #c70000;
+  }
+  
+  header li:first-child a {
+    background: #ad0000;
+    color: #fff;
+  }
+  header li:first-child a:hover {
+    color: #fff;
+  }
+  
+  /*Sections*/
+  section {
+    margin: 1em 0;
+  }
+  
+  section h1 {
+    text-transform: uppercase;
+  }
+  
+  hr {
+    border-color: #d3d3d3;
+    border-style: dashed;
+  }
+  
+  .vertical {
+    width: 0;
+    height: 10px;
+  }
+  
+  /*Intro*/
+  .sec-intro {
+    position: relative;
+  }
+  
+  .sec-intro img {
+    width: 100%;
+  }
+  
+  .sec-intro h1 {
+    position: absolute;
+    bottom: 0.5em;
+    left: 0.5em;
+    padding: 0.5em;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  
+  /*Boxes*/
+  .box {
+    float: left;
+    padding: 1.5em 1em;
+    width: 25%;
+    height: 550px;
+    border-top: 0.1em solid #d3d3d3;
+    border-bottom: 0.1em solid #d3d3d3;
+    border-left: 0.1em solid #d3d3d3;
+    transition: background 0.25s;
+  }
+  .box:focus, .box:hover {
+    background: #f5f5f5;
+  }
+  
+  .box:last-child {
+    border-right: 0.1em solid #d3d3d3;
+  }
+  
+  .box h1 {
+    text-align: center;
+  }
+  
+  .box p {
+    margin-top: auto;
+    height: 6em;
+    text-align: justify;
+  }
+  
+  .box .button {
+    margin: 10em auto;
+  }
+  
+  /*Events*/
+  .sec-events > h1 {
+    margin-top: 1em;
+  }
+  
+  .sec-events article {
+    float: left;
+    padding: 0 0.25em;
+    width: 25%;
+    text-align: justify;
+  }
+  
+  .sec-events article h1,
+  .sec-events article p {
+    display: block;
+    margin: 0.5em 0;
+    padding: 0.25em 1em;
+    font-size: 110%;
+  }
+  
+  .sec-events article a {
+    float: right;
+    padding-right: 1em;
+  }
+  
+  .sec-events article h1 {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /*Projects*/
+  .sec-projects {
+    width: 60%;
+  }
+  
+  .sec-projects > h1 {
+    margin-top: 1em;
+    text-align: center;
+  }
+  
+  .sec-projects article {
+    padding: 0.5em 0;
+    width: 100%;
+  }
+  
+  .sec-projects article h1,
+  .sec-projects article p {
+    font-size: 110%;
+  }
+  
+  .sec-projects article h1 {
+    font-weight: bold;
+  }
+  
+  .sec-projects article p {
+    margin: 0.5em 0.5em 0.5em 0;
+    text-align: justify;
+  }
+  
+  .sec-projects p a {
+    float: right;
+  }
+  
+  .sec-projects button {
+    position: relative;
+    left: 80%;
+  }
+  
+  /*Standards*/
+  .sec-standards {
+    width: 40%;
+  }
+  
+  .sec-standards > h1 {
+    margin-top: 1em;
+    text-align: center;
+  }
+  
+  .sec-standards article {
+    float: left;
+    padding: 0.5em 1em;
+    width: 50%;
+    text-align: justify;
+  }
+  
+  .sec-standards article:last-child {
+    padding: 0.5em 0;
+  }
+  
+  .sec-standards article h1 {
+    text-align: center;
+  }
+  
+  /*Partners*/
+  .sec-partners h1 {
+    margin-top: 1em;
+  }
+  
+  .sec-partners .row {
+    float: left;
+    margin: 2em 0;
+    width: 100%;
+  }
+  
+  .logo-container {
+    float: left;
+    width: 16%;
+    width: 100px;
+  }
+  
+  .logo-container:not(:first-child) {
+    margin-left: 7.5%;
+  }
+  
+  .logo-container:first-child {
+    margin-top: 0.2em;
+  }
+  
+  .logo-container:nth-of-type(2) img {
+    margin-top: 1.2em;
+  }
+  
+  .logo-container:nth-of-type(3) img {
+    margin-top: 1.8em;
+  }
+  
+  .logo-container:nth-of-type(4) img {
+    margin-top: 2.35em;
+  }
+  
+  .logo-container:nth-of-type(5) img {
+    margin-top: 0.35em;
+  }
+  
+  .logo-container:last-of-type img {
+    margin-top: 0.65em;
+  }
+  
+  .sec-partners img {
+    float: left;
+    width: 100%;
+  }
+  
+  /*Footer*/
+  footer {
+    padding: 2em 0;
+    width: 100%;
+    text-align: center;
+    background: #d3d3d3;
+  }
+  
+  footer .nav-ul {
+    justify-content: center;
+    margin-bottom: 1em;
+  }
+  
+  footer li:not(:first-child) {
+    margin-left: 1.50em;
+  }
+  
+  footer li:first-child a {
+    color: #e90c0c;
+  }
+  
+  footer a {
+    font-size: 0.70 em;
+    font-weight: bold;
+    color: #d83232;
+  }
+  footer a:focus, footer a:hover {
+    color: #333;
+  }
+  
+  .copy {
+    font-size: 0.85em;
+  }
+</style>
+<div class="line"></div>
+<div class="wrapper">
+  <header role="banner">
+    <nav role="navigation">
+      <h1><a href="#">KPSA</a></h1>
+      <ul class="nav-ul">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li style="position: relative;">
+          <a href="#" id="services-tab" style="color: #ad0000; font-weight: bold;">Services</a>
+          <ul id="services-dropdown" style="display: none; position: absolute; top: 60%; left: 0; background-color: #ad0000; padding: 01px; border-radius: 1px; box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);">
+            <li><a href="#" id="healthcare-tab" style="font-size: medium;" style="color: #000000; font-weight: bold;">Healthcare</a></li>
+            <li><a href="#" id="agriculture-tab" style="font-size: medium;" style="color: #000000; font-weight: bold;">Agriculture</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main role="main">
+    <section class="sec-intro" role="section">
+      <img src="https://cdn.businessday.ng/2013/06/Information-and-Communication-Technology-1.png" alt="" />
+      <h1>Be Innovative!</h1>
+    </section>
+    <section class="sec-boxes" role="section">
+      <adrticle class="box">
+        <h4>Virtual Healthcare Solutions</h4>
+        <p>"Your Health, Your Way"<br/>
+          Revolutionize healthcare with our mobile app offering Virtual Doctor Visits over Telephone. Access expert medical advice for non-serious health issues from the comfort of your home.</p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h4>Remote Medicine Delivery</h4>
+        <p>"MedConnect"<br/>
+          Our AI/ML-powered chatbot-linked call center facilitates Remote Pharmacy services, delivering essential items and medicines using cutting-edge drone technology.
+        </p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h4>Universal Health Record for Emergency</h4>
+        <p>"HealthGuard"<br/>
+          Secure your health with our Universal Health Record system, a digital repository with the government, ensuring quick identification of existing health conditions for better healthcare planning.</p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h4>Health Education in Schools</h4>
+        <p>"HealthSmart Kids"<br/>
+          Empower the future with inculcation of healthcare in school curriculums. We teach simple first aid techniques and provide knowledge on medicines, fostering a healthy and aware population.
+        </p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h4>Agricultural Technology Solutions</h4>
+        <p>"AgriTech Connect"<br/>
+          Transform agriculture with modernized farm services. Guiding you from installing state-of-the-art equipment for irrigation to advanced crop monitoring, we enhance agricultural efficiency.</p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h4>Global<br/> Market <br/>Access</h4>
+        <p>"Global Harvest Hub"<br/>
+          Expand your horizons through partnerships and investments. Gain access to global markets, ensuring your agricultural yields reach countries where they are most needed.
+        </p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h4>Digital <br/>Farm Management</h4>
+        <p>"FarmPro Connect"<br/>
+          Seamlessly monitor your farm with our end-to-end online system. Receive real-time notifications and detailed instructions, empowering farmers for efficient and informed decision-making.</p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h4>Remote Livestock Management</h4>
+        <p>"Livestock Care Hub"<br/>
+          Embrace the future of farming with our IoT-powered Remote Livestock Management services. From vaccinations to nutrition and health checkups, we offer a streamlined, labor-efficient solution.
+        </p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      
+    </section>
+    <section class="sec-events" role="section">
+      <hr />
+      <h1>ABOUT US</h1>
+      <article>
+        <h1>EXPERTISE</h1>
+        <p>Welcome to KPSA Solutions! Your innovative ICT partners. We have achieved expertise in providing virtual services and we are dedicated to transforming essential services in healthcare and agriculture through our physical center which acts as a virtual services hub in Nigeria. Our expertise lies in leveraging cutting-edge technology to redefine essential services. With a focus on healthcare and agriculture, we bring innovative solutions that seamlessly integrate into the fabric of everyday life, ensuring accessibility and efficiency for our community.</p>
+        <a class="link" href="#">more...</a>
+      </article>
+      <article>
+        <h1>WHAT WE DO</h1>
+        <p>We specialize in virtual healthcare solutions, offering services like virtual doctor visits and remote pharmacy consultations. In agriculture, we modernize farm practices, facilitate global market access, and introduce digital farm and livestock management systems. Our physical center serves as a hub for select activities and for all virtual services, ensuring uninterrupted services even in the rare event of a virtual network failure.</p>
+        <a class="link" href="#">more...</a>
+      </article>
+      <article>
+        <h1>GOALS</h1>
+        <p>Our overarching goal is to revolutionize essential services in Nigeria. We aim to empower the community through accessible healthcare, transformative agricultural practices, and technology-driven education. By bridging gaps and fostering innovation, we envision a resilient, self-sufficient community with global impact, where every individual can lead a healthy and prosperous life.</p>
+        <a class="link" href="#">more...</a>
+      </article>
+      <article>
+        <h1>CONTACTS</h1>
+        <pre style="font-size: 1.10em";>
+        KPSA SOLUTIONS
+        Headquarter
+        326 MARKET STREET
+        HARRISBURG
+        PENNSYLVANIA
+        17101
+        kpsasolutions@kpsa.co.us
+        (M) +1 989 621 7125
+
+        KPSA SOLUTIONS Nigeria
+        22 Awolowo Rd
+        Lagos,2476
+        Nigeria
+        (M) +1 513 614 1211
+            </pre>
+        <a class="link" href="#"></a>
+      </article>
+    </section>
+  </main>
+</div>
+<footer>
+  <nav role="navigation">
+    <ul class="nav-ul">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Technologies</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contacts</a></li>
+    </ul>
+  </nav>
+  <p class="copy">&copy; KPPS SOLUTIONS 2000</p>
+</footer>
+<div class="line"></div>
+<script>
+  // Function to open new page for healthcare
+  document.getElementById('healthcare-tab').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.open('healthcare.html', '_blank');
+  });
+  
+  // Function to open new page for agriculture
+  document.getElementById('agriculture-tab').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.open('agriculture.html', '_blank');
+  });
+  
+  // Function to handle click event for Services tab
+  document.getElementById('services-tab').addEventListener('click', function(event) {
+    event.preventDefault();
+    var dropdown = document.getElementById('services-dropdown');
+    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+      dropdown.style.display = 'block';
+    } else {
+      dropdown.style.display = 'none';
+    }
+  });
+  </script>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agriculture Services</title>
+<style>
+/* CSS styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.service {
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.service-img {
+  width: 100%;
+  height: 300px;
+  object-fit: fill;
+}
+
+.service-content {
+  padding: 20px;
+}
+
+.service h2 {
+  color: #ad0000;
+}
+
+.service p {
+  color: #333;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #ad0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #890000;
+}
+
+.dropdown {
+  margin-bottom: 10px;
+}
+
+.dropdown-select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* Agriculture Service Specific Styles */
+.service-content select {
+    margin-top: 10px;
+  }
+  
+  .service-content label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .service-content .farm-options {
+    display: none;
+  }
+  
+  .service-content .user-info {
+    display: none;
+  }
+
+  /* Agriculture technology Service Specific Styles */
+.service-content select {
+    margin-top: 10px;
+  }
+  
+  .service-content label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .service-content .services-options {
+    display: none;
+  }
+  
+  .service-content .service-price {
+    display: none;
+  }
+
+
+  /* Header Styles */
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 60px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>KPSA</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Services</a>
+    <a href="#">Projects</a>
+    <a href="#">Contacts</a>
+  </nav>
+</header>
+
+<div class="container">
+    <div class="service">
+      <img class="service-img" src="agricultural_technology.jpg" alt="Agricultural Technology Solutions">
+      <div class="service-content">
+        <h2>Agricultural Technology Solutions</h2>
+        <p>"AgriTech Connect"<br>
+        Transform agriculture with modernized farm services. Guiding you from installing state-of-the-art equipment for irrigation to advanced crop monitoring.</p>
+        <div class="dropdown">
+          <label for="service-select">Select a service:</label>
+          <select class="dropdown-select" id="service-select">
+            <option value="Irrigation Equipment Installation">Irrigation Equipment Installation</option>
+            <option value="Crop Monitoring Solutions">Crop Monitoring Solutions</option>
+            <option value="Soil Testing and Analysis">Soil Testing and Analysis</option>
+            <option value="Precision Agriculture Technology">Precision Agriculture Technology</option>
+            <option value="Automated Farming Systems">Automated Farming Systems</option>
+            <option value="Greenhouse Management">Greenhouse Management</option>
+            <option value="Farm Equipment Automation">Farm Equipment Automation</option>
+            <option value="Data-Driven Agriculture">Data-Driven Agriculture</option>
+            <option value="Crop Protection Services">Crop Protection Services</option>
+            <option value="Farm Infrastructure Development">Farm Infrastructure Development</option>
+          </select>
+        </div>
+        <button class="button" onclick="showServicePrice()">Select Service</button>
+        <div class="services-options">
+          <div class="service-price">
+            <!-- Prices will be displayed here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="service">
+      <img class="service-img" src="global_market_access.png" alt="Global Market Access">
+      <div class="service-content">
+        <h2>Global Market Access</h2>
+        <p>"Global Harvest Hub"<br>
+        Expand your horizons through partnerships and investments. Gain access to global markets, ensuring your agricultural yields reach countries where they are most needed.</p>
+        <div class="dropdown">
+          <label for="country-select">Select a country for export:</label>
+          <select class="dropdown-select" id="country-select">
+            <option value="USA">USA</option>
+            <option value="China">China</option>
+            <option value="India">India</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Russia">Russia</option>
+            <option value="Germany">Germany</option>
+            <option value="France">France</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Japan">Japan</option>
+            <option value="Canada">Canada</option>
+          </select>
+        </div>
+        <button class="button" onclick="exportToCountry()">Export</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="service">
+      <img class="service-img" src="digital_farm_management.jpg" alt="Digital Farm Management">
+      <div class="service-content">
+        <h2>Digital Farm Management</h2>
+        <p>"FarmPro Connect"<br>
+        Seamlessly monitor your farm with our end-to-end online system. Receive real-time notifications and detailed instructions, empowering farmers for efficient and informed decision-making.</p>
+        <div class="dropdown">
+          <label for="service-level-select">Select a service level:</label>
+          <select class="dropdown-select" id="service-level-select">
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+        <!-- Add any additional functionality or buttons as required -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="service">
+      <img class="service-img" src="remote_livestock_management.jpg" alt="Remote Livestock Management">
+      <div class="service-content">
+        <h2>Remote Livestock Management</h2>
+        <p>"Livestock Care Hub"<br>
+      Embrace the future of farming with our IoT-powered Remote Livestock Management services. From vaccinations to nutrition and health checkups, we offer a streamlined, labor-efficient solution.</p>
+      <div class="dropdown">
+        <label for="livestock-service-level-select">Select a service level:</label>
+        <select class="dropdown-select" id="livestock-service-level-select">
+            <option value="Basic">Basic</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+    </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    function showServicePrice() {
+        var serviceSelect = document.getElementById('service-select');
+        var selectedService = serviceSelect.options[serviceSelect.selectedIndex].text;
+        var servicePrice = document.querySelector('.service-price');
+      
+        // Prices for each service (dummy data)
+        var prices = {
+          "Irrigation Equipment Installation": "$500",
+          "Crop Monitoring Solutions": "$700",
+          "Soil Testing and Analysis": "$300",
+          "Precision Agriculture Technology": "$900",
+          "Automated Farming Systems": "$1200",
+          "Greenhouse Management": "$800",
+    "Farm Equipment Automation": "$1000",
+    "Data-Driven Agriculture": "$600",
+    "Crop Protection Services": "$850",
+    "Farm Infrastructure Development": "$1100"
+  };
+
+  // Display selected service price
+  servicePrice.textContent = "Price for " + selectedService + ": " + prices[selectedService];
+  servicePrice.style.display = 'block';
+}
+
+function exportToCountry() {
+  var countrySelect = document.getElementById('country-select');
+  var selectedCountry = countrySelect.options[countrySelect.selectedIndex].text;
+  alert("Exporting farm products to " + selectedCountry);
+}
+</script>
+
+</body>
+</html>
